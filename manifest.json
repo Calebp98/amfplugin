@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Dollar to Bednets Converter",
+    "version": "1.0",
+    "description": "Converts dollar amounts to the equivalent number of bednets",
+    "permissions": [
+      "activeTab"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["styles.css"]
+      }
+    ]
+  }
