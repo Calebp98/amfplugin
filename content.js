@@ -22,8 +22,10 @@ function replacePrice(element) {
   console.log(`Price: ${price}, Bednets: ${bednets}`);
 
   // Update price element with bednets
-  priceWholeElement.textContent = bednets.toString();
-  priceFractionElement.textContent = ' Bednets';
+  const newSpan = document.createElement('span');
+  newSpan.textContent = `(${bednets} Bednets)`;
+  priceFractionElement.parentElement.appendChild(document.createElement('br'));
+  priceFractionElement.parentElement.appendChild(newSpan);
 
   const decimalElement = element.querySelector('.a-price-decimal');
   if (decimalElement) {
