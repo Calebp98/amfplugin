@@ -6,10 +6,8 @@ This is a Chrome extension that converts Amazon prices to the equivalent number 
 
 ## Features
 
-- Automatically detects and replaces prices on Amazon product pages
-- Converts prices to the number of bednets that can be purchased
-- Handles prices with whole and fractional parts
-- Observes changes in the DOM and updates prices dynamically
+- Converts prices to the number of bednets that can be purchased from the Against Malaria Foundation
+- Observes changes in the DOM and updates prices
 
 ## Installation
 
