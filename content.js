@@ -18,7 +18,7 @@ function replacePrice(element) {
     return;
   }
 
-  const bednets = Math.floor(price / 3);
+  const bednets = Math.floor(price / 2);
   console.log(`Price: ${price}, Bednets: ${bednets}`);
 
   // Update price element with bednets
