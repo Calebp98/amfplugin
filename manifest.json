@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Dollar to Bednets Converter",
     "version": "1.0",
-    "description": "Converts dollar amounts to the equivalent number of bednets",
+    "description": "Converts dollar amounts to the equivalent number of bednets according to AMF.",
     "permissions": [
       "activeTab"
     ],

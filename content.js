@@ -4,7 +4,7 @@ function replacePrice(element) {
   const priceSymbolElement = element.querySelector('.a-price-symbol');
 
   if (!priceWholeElement || !priceFractionElement || !priceSymbolElement) {
-    console.error('Price element structure not found');
+    // Price elements not found, return early
     return;
   }
 
@@ -21,15 +21,36 @@ function replacePrice(element) {
   const bednets = Math.floor(price / 2);
   console.log(`Price: ${price}, Bednets: ${bednets}`);
 
-  // Update price element with bednets
+
+// Check if the bednets element already exists
+const existingBednetsElement = element.querySelector('.bednets-element');
+if (!existingBednetsElement) {
+  // Create and append the bednets element if it doesn't exist
   const newSpan = document.createElement('span');
-  newSpan.textContent = `(${bednets} Bednets)`;
-  priceFractionElement.parentElement.appendChild(document.createElement('br'));
-  priceFractionElement.parentElement.appendChild(newSpan);
+  newSpan.textContent = `${bednets} Bednets `;
+  newSpan.classList.add('bednets-element');
+
+  const newLink = document.createElement('a');
+  newLink.textContent = '(source)';
+  newLink.href = 'https://www.againstmalaria.com/';
+  newLink.target = '_blank';
+  newLink.classList.add('bednets-source');
+
+  // Add a <br> element before the newSpan element
+  priceSymbolElement.parentElement.appendChild(document.createElement('br'));
+  priceSymbolElement.parentElement.appendChild(newSpan);
+  newSpan.appendChild(newLink);
+}
 
   const decimalElement = element.querySelector('.a-price-decimal');
   if (decimalElement) {
     decimalElement.textContent = '';
+  }
+
+  // Remove the "$0" text if the price is zero
+  if (price === 0) {
+    priceWholeElement.textContent = '';
+    priceFractionElement.textContent = '';
   }
 }
 
